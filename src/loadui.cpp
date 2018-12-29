@@ -72,16 +72,16 @@ void MyFrame::LoadUI () {
                 wxFont LbFont (10, wxMODERN, wxNORMAL, wxNORMAL, false);
             	FBConsole->SetFont(LbFont);
                 wxListItem itemCol;
-                itemCol.SetText(_T(Lang[165])); //"Line"
+                itemCol.SetText(Lang[165]); //"Line"
                 itemCol.SetAlign(wxLIST_FORMAT_LEFT);
                 FBConsole->InsertColumn(0, itemCol);
-                itemCol.SetText(_T(Lang[166])); //"File"
+                itemCol.SetText(Lang[166]); //"File"
                 itemCol.SetAlign(wxLIST_FORMAT_LEFT);
                 FBConsole->InsertColumn(1, itemCol);
-                itemCol.SetText(_T(Lang[167])); //"Error nr"
+                itemCol.SetText(Lang[167]); //"Error nr"
                 itemCol.SetAlign(wxLIST_FORMAT_LEFT);
                 FBConsole->InsertColumn(2, itemCol);
-                itemCol.SetText(_T(Lang[161])); //"Messages"
+                itemCol.SetText(Lang[161]); //"Messages"
                 itemCol.SetAlign(wxLIST_FORMAT_LEFT);
                 FBConsole->InsertColumn(3, itemCol);
                 FBConsole->SetColumnWidth( 0, 60 );
@@ -114,26 +114,26 @@ void MyFrame::LoadMenu () {
     //wxMenu * file_history = new wxMenu;
     m_FileHistory->UseMenu( FB_File );
     
-    FB_File->Append (Menu_New, _T(Lang[11] + "\tCtrl+N"), _T(Lang[12]));
-    FB_File->Append (Menu_Open, _T(Lang[13] + "\tCtrl+O"), _T(Lang[14]));
-    //FB_File->Append (Menu_FileHistory, _T(Lang[13]) + "...", file_history );
+    FB_File->Append (Menu_New, Lang[11] + "\tCtrl+N", Lang[12]);
+    FB_File->Append (Menu_Open, Lang[13] + "\tCtrl+O", Lang[14]);
+    //FB_File->Append (Menu_FileHistory, Lang[13] + "...", file_history );
     
     FB_File->AppendSeparator();
-    FB_File->Append (Menu_Save,	_T(Lang[15] + "\tCtrl+S"), _T(Lang[16]));
-    FB_File->Append (Menu_SaveAS, _T(Lang[17] + "\tCtrl+Shift+S"), _T(Lang[18]));
-    FB_File->Append (Menu_SaveAll, _T(Lang[19]), _T(Lang[20]));
+    FB_File->Append (Menu_Save,	Lang[15] + "\tCtrl+S", Lang[16]);
+    FB_File->Append (Menu_SaveAS, Lang[17] + "\tCtrl+Shift+S", Lang[18]);
+    FB_File->Append (Menu_SaveAll, Lang[19], Lang[20]);
     
     FB_File->AppendSeparator();
-    FB_File->Append (Menu_SessionLoad, _T(Lang[169]), _T(Lang[170]));
-    FB_File->Append (Menu_SessionSave, _T(Lang[171]), _T(Lang[172]));
+    FB_File->Append (Menu_SessionLoad, Lang[169], Lang[170]);
+    FB_File->Append (Menu_SessionSave, Lang[171], Lang[172]);
     
     FB_File->AppendSeparator();
-    FB_File->Append (Menu_Close, _T(Lang[21] + "\tCtrl+F4"), _T(Lang[22]));
+    FB_File->Append (Menu_Close, Lang[21] + "\tCtrl+F4", Lang[22]);
     FB_File->Append (Menu_CloseAll, Lang[173], Lang[174]);
 
     FB_File->AppendSeparator();
-    FB_File->Append (Menu_NewEditor, _T(Lang[23] + "\tShift+Ctrl+N"), _T(Lang[24]));
-    FB_File->Append (Menu_Quit, _T(Lang[25] + "\tCtrl+Q"), _T(Lang[26]));
+    FB_File->Append (Menu_NewEditor, Lang[23] + "\tShift+Ctrl+N", Lang[24]);
+    FB_File->Append (Menu_Quit, Lang[25] + "\tCtrl+Q", Lang[26]);
 
 
 
@@ -196,22 +196,22 @@ void MyFrame::LoadMenu () {
 
     //Help
     HelpMenu = new wxMenu;
-    HelpMenu->Append(Menu_Help, _T(Lang[ 10 ] + "\tF1" ) );
+    HelpMenu->Append(Menu_Help, Lang[ 10 ] + "\tF1"  );
     if( !Prefs.UseHelp ) HelpMenu->Enable( Menu_Help, false );
     HelpMenu->Append(Menu_QuickKeys, _T("QuickKeys.txt") );
     HelpMenu->Append(Menu_ReadMe, _T("ReadMe.txt") );
     //HelpMenu->Append(Menu_Fpp, _T("Fpp.txt") );
     HelpMenu->AppendSeparator();
-    HelpMenu->Append(Menu_About,   _T(Lang[79]),    _T(Lang[80]));
+    HelpMenu->Append(Menu_About,   Lang[79],    Lang[80]);
 
 
     //Implement menus
-    MenuBar->Append(FB_File,  _T(Lang[4]));
-    MenuBar->Append(_FB_Edit,  _T(Lang[5]));
-    MenuBar->Append(FB_Search,_T(Lang[6]));
-    MenuBar->Append(FB_View,  _T(Lang[7]));
-    MenuBar->Append(FB_Run,   _T(Lang[9]));
-    MenuBar->Append(HelpMenu, _T(Lang[10]));
+    MenuBar->Append(FB_File,  Lang[4]);
+    MenuBar->Append(_FB_Edit,  Lang[5]);
+    MenuBar->Append(FB_Search,Lang[6]);
+    MenuBar->Append(FB_View,  Lang[7]);
+    MenuBar->Append(FB_Run,   Lang[9]);
+    MenuBar->Append(HelpMenu, Lang[10]);
     SetMenuBar(MenuBar);
     
     return;
@@ -311,7 +311,7 @@ void MyFrame::EnableMenus ( bool state ) {
 // Load Statusbar
 void MyFrame::LoadStatusBar () {
     CreateStatusBar(2);
-    SetStatusText(_T(Lang[1]));
+    SetStatusText(Lang[1]);
     return;
 }
 

@@ -512,11 +512,11 @@ wxIcon ConfigDialog::GetIconResource( const wxString& name ) {
 
 void ConfigDialog::OnCompilerPath( wxCommandEvent& event ) {
     wxFileDialog dlg (this,
-                      _T(m_Parent->Lang[155]), //Open file
+                      m_Parent->Lang[155], //Open file
                       _T(""),
 #ifdef __WXMSW__
                       _T("fbc.exe"),
-                      _T(m_Parent->Lang[156]), //"All programs (*.exe)|*.exe"
+                      m_Parent->Lang[156], //"All programs (*.exe)|*.exe"
 #else
                       _T("fbc"),
                       _T(""),
@@ -549,8 +549,8 @@ void ConfigDialog::OnSaveTheme( wxCommandEvent& event ) {
     if (chTheme->GetSelection()!=0)
         m_Parent->SaveThemeFile(m_Style, chTheme->GetStringSelection());
     else {
-        wxTextEntryDialog dialog(this, _T(m_Lang[157]), //"Enter theme name:"
-                                 _T(m_Lang[158]), //"Paremeters..."
+        wxTextEntryDialog dialog(this, m_Lang[157], //"Enter theme name:"
+                                 m_Lang[158], //"Paremeters..."
                                  "", wxOK | wxCANCEL);
         if (dialog.ShowModal() != wxID_OK)
             return;
@@ -911,10 +911,10 @@ void ConfigDialog::OnCancelClick( wxCommandEvent& event ) {
 
 void ConfigDialog::OnHelpPath( wxCommandEvent& event ) {
     wxFileDialog dlg (this,
-                      _T(m_Lang[155]), //Open file
+                      m_Lang[155], //Open file
                       _T(""),
                       _T(""),
-                      _T( m_Lang[243] + "|*.chm"),
+                       m_Lang[243] + "|*.chm",
                       wxFILE_MUST_EXIST );
     if (dlg.ShowModal() != wxID_OK)
         return;

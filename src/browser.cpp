@@ -84,15 +84,15 @@ SFBrowser::SFBrowser(   wxWindow* parent,
 
 
     wxListItem itemCol;
-    itemCol.SetText(_T(Parent->Lang[165]));
+    itemCol.SetText(Parent->Lang[165]);
     itemCol.SetAlign(wxLIST_FORMAT_LEFT);
     SFList->InsertColumn(0, itemCol);
 
-    itemCol.SetText(_T(Parent->Lang[227]));
+    itemCol.SetText(Parent->Lang[227]);
     itemCol.SetAlign(wxLIST_FORMAT_LEFT);
     SFList->InsertColumn(1, itemCol);
 
-    itemCol.SetText(_T(Parent->Lang[228]));
+    itemCol.SetText(Parent->Lang[228]);
     itemCol.SetAlign(wxLIST_FORMAT_LEFT);
     SFList->InsertColumn(2, itemCol);
 

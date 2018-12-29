@@ -240,9 +240,9 @@ void MyFrame::OnCmdPromt (wxCommandEvent& WXUNUSED(event)) {
 }
 
 void MyFrame::OnParameters (wxCommandEvent& WXUNUSED(event)) {
-    wxTextEntryDialog dialog(this, _T(Lang[177]), //"Parameters to pass to your program"
-                             _T(Lang[158]),
-                             _T(ParameterList),
+    wxTextEntryDialog dialog(this, Lang[177], //"Parameters to pass to your program"
+                             Lang[158],
+                             ParameterList,
                              wxOK | wxCANCEL);
 
     if (dialog.ShowModal() == wxID_OK) {

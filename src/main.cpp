@@ -257,7 +257,7 @@ MyFrame::MyFrame(MyApp * App, const wxString& title)
     wxImage::AddHandler(new wxPNGHandler);
 
     wxBitmap bitmap;
-    if(Prefs.SplashScreen&&bitmap.LoadFile(_T(this->EditorPath+"/IDE/splash.png"), wxBITMAP_TYPE_PNG))
+    if(Prefs.SplashScreen&&bitmap.LoadFile(this->EditorPath+"/IDE/splash.png", wxBITMAP_TYPE_PNG))
     {
       new wxSplashScreen(bitmap,
           wxSPLASH_CENTRE_ON_SCREEN|wxSPLASH_TIMEOUT,

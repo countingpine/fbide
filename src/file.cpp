@@ -37,10 +37,10 @@ void MyFrame::OnNew (wxCommandEvent& WXUNUSED(event)) {
 
 void MyFrame::OnOpen (wxCommandEvent& WXUNUSED(event)) {
     wxFileDialog dlg (this,
-                      _T(Lang[186]),//Load File
+                      Lang[186],//Load File
                       _T(""),
                       _T(".bas"),
-                      _T(Lang[187]),//Types
+                      Lang[187],//Types
                       wxFILE_MUST_EXIST | wxMULTIPLE);
     if (dlg.ShowModal() != wxID_OK)
         return;
@@ -263,10 +263,10 @@ bool MyFrame::SaveFile (Buffer* buff, bool SaveAS) {
 
     if (FileName==""||FileName==FBUNNAMED) {
         wxFileDialog dlg (this,
-                          _T(Lang[195]),//Save file
+                          Lang[195],//Save file
                           _T(""),
-                          _T( (ft==0) ? ".bas" : ".html" ),
-                          _T( Temp ),
+                           (ft==0 ? ".bas" : ".html" ),
+                           Temp ,
                           wxSAVE|wxOVERWRITE_PROMPT);
         if (dlg.ShowModal() != wxID_OK)
             return false;
@@ -289,10 +289,10 @@ bool MyFrame::SaveFile (Buffer* buff, bool SaveAS) {
 
 void MyFrame::OnSessionLoad      ( wxCommandEvent& event ) {
     wxFileDialog dlg (this,
-                      _T(Lang[186]), //Load file
+                      Lang[186], //Load file
                       _T(""),
                       _T(".bas"),
-                      _T(Lang[198]), //FBIde Session
+                      Lang[198], //FBIde Session
                       wxFILE_MUST_EXIST );
     if (dlg.ShowModal() != wxID_OK)
         return;
@@ -366,10 +366,10 @@ void MyFrame::OnSessionSave      ( wxCommandEvent& event ) {
     wxString FileName;
 
     wxFileDialog dlg (this,
-                      _T(Lang[199]),
+                      Lang[199],
                       _T(""),
                       _T(".fbs"),
-                      _T(Lang[198]),
+                      Lang[198],
                       wxSAVE|wxOVERWRITE_PROMPT);
     if (dlg.ShowModal() != wxID_OK)
         return;
