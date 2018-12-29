@@ -139,58 +139,58 @@ void MyFrame::LoadMenu () {
 
     // Edit menu
     _FB_Edit = new wxMenu;
-    _FB_Edit->Append (Menu_Undo, 	_(Lang[27] + _T("\tCtrl+Z")), _(Lang[28]));
-    _FB_Edit->Append (Menu_Redo, 	_(Lang[29] + _T("\tCtrl+Shift+Z")), _(Lang[30]));
+    _FB_Edit->Append (Menu_Undo, 	Lang[27] + _T("\tCtrl+Z"), Lang[28]);
+    _FB_Edit->Append (Menu_Redo, 	Lang[29] + _T("\tCtrl+Shift+Z"), Lang[30]);
     _FB_Edit->AppendSeparator();
     
-    _FB_Edit->Append (Menu_Cut, 		_(Lang[31] + _T("\tCtrl+X")), _(Lang[32]));
-    _FB_Edit->Append (Menu_Copy, 	_(Lang[33] + _T("\tCtrl+C")), _(Lang[34]));
-    _FB_Edit->Append (Menu_Paste, 	_(Lang[35] + _T("\tCtrl+V")), _(Lang[36]));
+    _FB_Edit->Append (Menu_Cut, 		Lang[31] + _T("\tCtrl+X"), Lang[32]);
+    _FB_Edit->Append (Menu_Copy, 	Lang[33] + _T("\tCtrl+C"), Lang[34]);
+    _FB_Edit->Append (Menu_Paste, 	Lang[35] + _T("\tCtrl+V"), Lang[36]);
     _FB_Edit->AppendSeparator();
 
-    _FB_Edit->Append (Menu_SelectAll,	_(Lang[37] + _T("\tCtrl+A")), _(Lang[38]));
-    _FB_Edit->Append (Menu_SelectLine,	_(Lang[39] + _T("\tCtrl+L")), _(Lang[40]));
+    _FB_Edit->Append (Menu_SelectAll,	Lang[37] + _T("\tCtrl+A"), Lang[38]);
+    _FB_Edit->Append (Menu_SelectLine,	Lang[39] + _T("\tCtrl+L"), Lang[40]);
     _FB_Edit->AppendSeparator();
 
-    _FB_Edit->Append (Menu_IndentIncrease, _(Lang[41] + _T("\tTab")), _(Lang[42]));
-    _FB_Edit->Append (Menu_IndentDecrease, _(Lang[43] + _T("\tShift+Tab")), _(Lang[44]));
+    _FB_Edit->Append (Menu_IndentIncrease, Lang[41] + _T("\tTab"), Lang[42]);
+    _FB_Edit->Append (Menu_IndentDecrease, Lang[43] + _T("\tShift+Tab"), Lang[44]);
 
     _FB_Edit->AppendSeparator();
-    _FB_Edit->Append (Menu_Comment,      _(Lang[45] + _T("\tCtrl+M")), _(Lang[46]));
-    _FB_Edit->Append (Menu_UnComment,    _(Lang[47] + _T("\tCtrl+Shift+M")), _(Lang[48]));
+    _FB_Edit->Append (Menu_Comment,      Lang[45] + _T("\tCtrl+M"), Lang[46]);
+    _FB_Edit->Append (Menu_UnComment,    Lang[47] + _T("\tCtrl+Shift+M"), Lang[48]);
 
 
     // Search menu
     FB_Search = new wxMenu;
-    FB_Search->Append (Menu_Find,	  _(Lang[49] + _T("\tCtrl+F")), _(Lang[50]));
-    FB_Search->Append (Menu_FindNext, _(Lang[51] + _T("\tF3")), _(Lang[52]));
-    FB_Search->Append (Menu_Replace,  _(Lang[53] + _T("\tCtrl+R")), _(Lang[54]));
-    FB_Search->Append (Menu_GotoLine, _(Lang[55] + _T("\tCtrl+G")), _(Lang[56]));
+    FB_Search->Append (Menu_Find,	  Lang[49] + _T("\tCtrl+F"), Lang[50]);
+    FB_Search->Append (Menu_FindNext, Lang[51] + _T("\tF3"), Lang[52]);
+    FB_Search->Append (Menu_Replace,  Lang[53] + _T("\tCtrl+R"), Lang[54]);
+    FB_Search->Append (Menu_GotoLine, Lang[55] + _T("\tCtrl+G"), Lang[56]);
 
 
 
     // View menu
     FB_View = new wxMenu;
-    FB_View->Append          (Menu_Settings, _(Lang[57]), _(Lang[58]));
+    FB_View->Append          (Menu_Settings, Lang[57], Lang[58]);
     FB_View->Append          (Menu_Format, Lang[175], Lang[176]);
-    FB_View->AppendCheckItem (Menu_Result, _(Lang[59] + _T("\tF4")), _(Lang[60]));
-    FB_View->Append          (Menu_Subs, _(Lang[61] + _T("\tF2")), _(Lang[62]));
-    FB_View->Append          (Menu_CompilerLog, _(Lang[236]), _(Lang[237] ) );
-    //FB_Tools->Append (Menu_Converter, _(Language.ToolsConverter), _(Language.ToolsConverterDesc));
+    FB_View->AppendCheckItem (Menu_Result, Lang[59] + _T("\tF4"), Lang[60]);
+    FB_View->Append          (Menu_Subs, Lang[61] + _T("\tF2"), Lang[62]);
+    FB_View->Append          (Menu_CompilerLog, Lang[236], Lang[237]  );
+    //FB_Tools->Append (Menu_Converter, Language.ToolsConverter, Language.ToolsConverterDesc);
 
 
     //Run menu
     FB_Run = new wxMenu;
-    FB_Run->Append (Menu_Compile,       _(Lang[63] + _T("\tCtrl+F9")), _(Lang[64]));
-    FB_Run->Append (Menu_CompileAndRun, _(Lang[65] + _T("\tF9")), _(Lang[66]));
-    FB_Run->Append (Menu_Run,           _(Lang[67] + _T("\tShift+Ctrl+F9")), _(Lang[68]));
-    FB_Run->Append (Menu_QuickRun,      _(Lang[69] + _T("\tF5")), _(Lang[70]));
-    FB_Run->Append (Menu_CmdPromt,      _(Lang[71] + _T("\tF8")), _(Lang[72]));
-    FB_Run->Append (Menu_Parameters,    _(Lang[73]), _(Lang[74]));
-    FB_Run->AppendCheckItem (Menu_ShowExitCode, _(Lang[77]), _(Lang[78]));
+    FB_Run->Append (Menu_Compile,       Lang[63] + _T("\tCtrl+F9"), Lang[64]);
+    FB_Run->Append (Menu_CompileAndRun, Lang[65] + _T("\tF9"), Lang[66]);
+    FB_Run->Append (Menu_Run,           Lang[67] + _T("\tShift+Ctrl+F9"), Lang[68]);
+    FB_Run->Append (Menu_QuickRun,      Lang[69] + _T("\tF5"), Lang[70]);
+    FB_Run->Append (Menu_CmdPromt,      Lang[71] + _T("\tF8"), Lang[72]);
+    FB_Run->Append (Menu_Parameters,    Lang[73], Lang[74]);
+    FB_Run->AppendCheckItem (Menu_ShowExitCode, Lang[77], Lang[78]);
 	FB_Run->Check  (Menu_ShowExitCode,  Prefs.ShowExitCode);
 	
-    FB_Run->AppendCheckItem ( Menu_ActivePath, _(Lang[234]), _(Lang[235]));
+    FB_Run->AppendCheckItem ( Menu_ActivePath, Lang[234], Lang[235]);
     FB_Run->Check  ( Menu_ActivePath,   Prefs.ActivePath );
 
 
@@ -245,24 +245,24 @@ void MyFrame::LoadToolBar () {
     toolBarBitmaps[14]= wxBITMAP(output);
 
     
-    FB_Toolbar->AddTool(Menu_New, toolBarBitmaps[0], wxNullBitmap, FALSE, 100, 100, (wxObject *) NULL, _(Lang[83]));
-    FB_Toolbar->AddTool(Menu_Open, toolBarBitmaps[1], wxNullBitmap, FALSE, -1, -1, (wxObject *) NULL, _(Lang[84]));
-    FB_Toolbar->AddTool(Menu_Save, toolBarBitmaps[2], wxNullBitmap, FALSE, -1, -1, (wxObject *) NULL, _(Lang[85]));
-    FB_Toolbar->AddTool(Menu_SaveAll, toolBarBitmaps[12], wxNullBitmap, FALSE, -1, -1, (wxObject *) NULL, _(Lang[86]));
-    FB_Toolbar->AddTool(Menu_Close, toolBarBitmaps[13], wxNullBitmap, FALSE, -1, -1, (wxObject *) NULL, _(Lang[87]));
+    FB_Toolbar->AddTool(Menu_New, toolBarBitmaps[0], wxNullBitmap, FALSE, 100, 100, (wxObject *) NULL, Lang[83]);
+    FB_Toolbar->AddTool(Menu_Open, toolBarBitmaps[1], wxNullBitmap, FALSE, -1, -1, (wxObject *) NULL, Lang[84]);
+    FB_Toolbar->AddTool(Menu_Save, toolBarBitmaps[2], wxNullBitmap, FALSE, -1, -1, (wxObject *) NULL, Lang[85]);
+    FB_Toolbar->AddTool(Menu_SaveAll, toolBarBitmaps[12], wxNullBitmap, FALSE, -1, -1, (wxObject *) NULL, Lang[86]);
+    FB_Toolbar->AddTool(Menu_Close, toolBarBitmaps[13], wxNullBitmap, FALSE, -1, -1, (wxObject *) NULL, Lang[87]);
     FB_Toolbar->AddSeparator();
-    FB_Toolbar->AddTool(Menu_Cut, toolBarBitmaps[3], wxNullBitmap, FALSE, -1, -1, (wxObject *) NULL, _(Lang[88]));
-    FB_Toolbar->AddTool(Menu_Copy, toolBarBitmaps[4], wxNullBitmap, FALSE, -1, -1, (wxObject *) NULL, _(Lang[89]));
-    FB_Toolbar->AddTool(Menu_Paste, toolBarBitmaps[5], wxNullBitmap, FALSE, -1, -1, (wxObject *) NULL, _(Lang[90]));
+    FB_Toolbar->AddTool(Menu_Cut, toolBarBitmaps[3], wxNullBitmap, FALSE, -1, -1, (wxObject *) NULL, Lang[88]);
+    FB_Toolbar->AddTool(Menu_Copy, toolBarBitmaps[4], wxNullBitmap, FALSE, -1, -1, (wxObject *) NULL, Lang[89]);
+    FB_Toolbar->AddTool(Menu_Paste, toolBarBitmaps[5], wxNullBitmap, FALSE, -1, -1, (wxObject *) NULL, Lang[90]);
     FB_Toolbar->AddSeparator();
-    FB_Toolbar->AddTool(Menu_Undo, toolBarBitmaps[6], wxNullBitmap, FALSE, -1, -1, (wxObject *) NULL, _(Lang[91]));
-    FB_Toolbar->AddTool(Menu_Redo, toolBarBitmaps[7], wxNullBitmap, FALSE, -1, -1, (wxObject *) NULL, _(Lang[92]));
+    FB_Toolbar->AddTool(Menu_Undo, toolBarBitmaps[6], wxNullBitmap, FALSE, -1, -1, (wxObject *) NULL, Lang[91]);
+    FB_Toolbar->AddTool(Menu_Redo, toolBarBitmaps[7], wxNullBitmap, FALSE, -1, -1, (wxObject *) NULL, Lang[92]);
     FB_Toolbar->AddSeparator();
-    FB_Toolbar->AddTool(Menu_Compile, toolBarBitmaps[8], wxNullBitmap, FALSE, -1, -1, (wxObject *) NULL, _(Lang[93]));
-    FB_Toolbar->AddTool(Menu_Run, toolBarBitmaps[9], wxNullBitmap, FALSE, -1, -1, (wxObject *) NULL, _(Lang[94]));
-    FB_Toolbar->AddTool(Menu_CompileAndRun, toolBarBitmaps[10], wxNullBitmap, FALSE, -1, -1, (wxObject *) NULL, _(Lang[95]));
-    FB_Toolbar->AddTool(Menu_QuickRun, toolBarBitmaps[11], wxNullBitmap, FALSE, -1, -1, (wxObject *) NULL, _(Lang[96]));
-    FB_Toolbar->AddTool(Menu_Result, toolBarBitmaps[14], wxNullBitmap, FALSE, -1, -1, (wxObject *) NULL, _(Lang[97]));
+    FB_Toolbar->AddTool(Menu_Compile, toolBarBitmaps[8], wxNullBitmap, FALSE, -1, -1, (wxObject *) NULL, Lang[93]);
+    FB_Toolbar->AddTool(Menu_Run, toolBarBitmaps[9], wxNullBitmap, FALSE, -1, -1, (wxObject *) NULL, Lang[94]);
+    FB_Toolbar->AddTool(Menu_CompileAndRun, toolBarBitmaps[10], wxNullBitmap, FALSE, -1, -1, (wxObject *) NULL, Lang[95]);
+    FB_Toolbar->AddTool(Menu_QuickRun, toolBarBitmaps[11], wxNullBitmap, FALSE, -1, -1, (wxObject *) NULL, Lang[96]);
+    FB_Toolbar->AddTool(Menu_Result, toolBarBitmaps[14], wxNullBitmap, FALSE, -1, -1, (wxObject *) NULL, Lang[97]);
     
     FB_Toolbar->Realize();
 

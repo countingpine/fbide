@@ -37,7 +37,7 @@ void MyFrame::OnFind (wxCommandEvent& WXUNUSED(event)) {
     else
         FindData->SetFindString(GetTextUnderCursor());
 
-    FindDialog = new wxFindReplaceDialog(this, FindData, _(Lang[219]), 0); //Find text
+    FindDialog = new wxFindReplaceDialog(this, FindData, Lang[219], 0); //Find text
     FindDialog->Show();
     return;
 }
@@ -56,7 +56,7 @@ void MyFrame::OnReplace (wxCommandEvent& WXUNUSED(event)) {
         ReplaceData->SetFindString(GetTextUnderCursor());
 
     ReplaceDialog = new wxFindReplaceDialog(this, ReplaceData,
-                                            _(Lang[220]), wxFR_REPLACEDIALOG); //Replace text
+                                            Lang[220], wxFR_REPLACEDIALOG); //Replace text
 
     ReplaceDialog->Show();
     return;
@@ -80,7 +80,7 @@ void MyFrame::OnFindAgain (wxCommandEvent& WXUNUSED(event)) {
 void MyFrame::OnGotoLine (wxCommandEvent& WXUNUSED(event)) {
     if (stc==0)
         return;
-    wxString lineString = wxGetTextFromUser(_(Lang[221]), _(Lang[222]), _(""), this);
+    wxString lineString = wxGetTextFromUser(Lang[221], Lang[222], _(""), this);
     //Go To Line Number: \ Go To Line
 
     if (lineString.IsEmpty())

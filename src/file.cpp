@@ -171,10 +171,10 @@ void MyFrame::OnCloseFile       ( ) {
     Buffer* buff = bufferList[index];
 
     if (buff->GetModified()) {
-        wxString message = wxString::Format(_(Lang[190]),
+        wxString message = wxString::Format(Lang[190],
                                             wxFileNameFromPath(buff->GetFileName()).c_str());
 
-        int closeDialog = wxMessageBox(message, _(Lang[192]), //"File Modified"
+        int closeDialog = wxMessageBox(message, Lang[192], //"File Modified"
                                        wxYES_NO | wxCANCEL | wxICON_EXCLAMATION, GetParent());
 
         if (closeDialog == wxYES)
