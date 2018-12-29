@@ -472,7 +472,7 @@ int MyFrame::Compile ( int index ) {
 #ifdef __WXMSW__
 
     wxFileName objFbcPath( CompilerPath );
-    wxExecute( "\"" + objFbcPath.GetFullPath() + "\" -version", arrOutput );
+    wxExecute( "\042" + objFbcPath.GetFullPath() + "\042 -version", arrOutput );
 #else
 
     wxExecute( CompilerPath + " -version", arrOutput );
@@ -537,7 +537,7 @@ void MyFrame::Run ( wxFileName file ) {
     if ( !result ) {
         delete objProcess;
         ProcessIsRunning = false;
-        wxMessageBox ( Lang[182] + strCommand + "\"", Lang[179], wxICON_ERROR );
+        wxMessageBox ( Lang[182] + strCommand + "\042", Lang[179], wxICON_ERROR );
         return;
     }
 

@@ -314,7 +314,7 @@ void MyFrame::SessionLoad ( wxString File ) {
 
     Temp = TextFile[0];
     int ver = 1;
-    if( Temp.Trim( false ).Trim( true ).Lower() == "<fbide:session:version = \"0.2\"/>" )
+    if( Temp.Trim( false ).Trim( true ).Lower() == "<fbide:session:version = \0420.2\042/>" )
         ver = 2;
 
     for( unsigned int i = ver; i < TextFile.GetLineCount(); i++) {
@@ -389,7 +389,7 @@ void MyFrame::OnSessionSave      ( wxCommandEvent& event ) {
     bool header = true;
 
     int SelectedTab = FBNotebook->GetSelection();
-    TextFile.AddLine( "<fbide:session:version = \"0.2\"/>" );
+    TextFile.AddLine( "<fbide:session:version = \0420.2\042/>" );
     for (int i=0; i < FBNotebook->GetPageCount();i++ ) {
         buff = bufferList[i];
         if (buff->GetModified()) {

@@ -562,7 +562,7 @@ void ConfigDialog::OnSaveTheme( wxCommandEvent& event ) {
 
         wxFileSystem File;
         if (File.FindFirst( m_Parent->EditorPath+"IDE/"+fn+".fbt" )!="" ) {
-            //"Theme \""+ fn +"\" already exists!\nOverwrite it?"
+            //"Theme \042"+ fn +"\042 already exists!\nOverwrite it?"
             if (wxMessageBox (m_Lang[159]+ fn + m_Lang[160], m_Lang[161], wxICON_QUESTION | wxYES_NO )!=wxOK)
                 return;
         }

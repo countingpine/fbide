@@ -50,7 +50,7 @@ VwX_INIT_OBJECTS_format {
     sb9->SetTitle(wxT(Parent->Lang[164])); //"Preview!"
 
     preview=new wxStaticText(this,-1,wxT(""),wxPoint(30,145),wxSize(45,13));
-    preview->SetLabel(wxT("Cls:Locate 1,1:Print \"\""));
+    preview->SetLabel(wxT("Cls:Locate 1,1:Print \042\042"));
 
     wxString choices[]= {"KeyWords","KEYWORDS","keywords","BBCode","HTML"
                         };
@@ -117,13 +117,13 @@ void format::bt17_VwXEvOnButtonClick(wxCommandEvent& event,int index) {
 void format::chc15_VwXEvOnChoiceSelect(wxCommandEvent& event,int index) {
     switch(chc15->GetSelection()) {
         case 0:
-        preview->SetLabel("Cls:Locate 1,1:Print \"\"");
+        preview->SetLabel("Cls:Locate 1,1:Print \042\042");
         break;
         case 1:
-        preview->SetLabel("CLS:a$=MID$(\"1234\",1)");
+        preview->SetLabel("CLS:a$=MID$(\0421234\042,1)");
         break;
         case 2:
-        preview->SetLabel("cls:locate 1,1:print \"\"");
+        preview->SetLabel("cls:locate 1,1:print \042\042");
         break;
         case 3:
         preview->SetLabel("[b]cls[/b]:[b]locate[/b] 1,1");
@@ -166,13 +166,13 @@ void format::button_ok_VwXEvOnButtonClick(wxCommandEvent& event,int index) {
         dotags=true;
         tagstart="[";
         tagend="]";
-        output="[quote=\"fbide 0.4 bbcode generator\"][size=12]";
+        output="[quote=\042fbide 0.4 bbcode generator\042][size=12]";
         break;
         case 4:
         dotags=true;
         tagstart="<";
         tagend=">";
-        output="<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">\n<html>\n<head>\n<meta http-equiv=\"content-type\" content=\"text/html;charset=iso-8859-1\">\n<title></title>\n</head>\n<body style=\"font-size:12pt; background-color:#"+hex(GetClr(Style->DefaultBgColour))+"; color:#"+hex(GetClr(Style->Info[wxSTC_B_IDENTIFIER].foreground))+"\"><pre>";
+        output="<!DOCTYPE html PUBLIC \042-//W3C//DTD HTML 4.01 Transitional//EN\042>\n<html>\n<head>\n<meta http-equiv=\042content-type\042 content=\042text/html;charset=iso-8859-1\042>\n<title></title>\n</head>\n<body style=\042font-size:12pt; background-color:#"+hex(GetClr(Style->DefaultBgColour))+"; color:#"+hex(GetClr(Style->Info[wxSTC_B_IDENTIFIER].foreground))+"\042><pre>";
         break;
     }
     wxString curword="";
@@ -209,8 +209,8 @@ void format::button_ok_VwXEvOnButtonClick(wxCommandEvent& event,int index) {
                         output+=tagstart+"/b"+tagend;
                     if(italic)
                         output+=tagstart+"/i"+tagend;
-                    output+=tagstart+"b"+tagend+tagstart+(sel==4?"span style=\"color:#":"color=#")+colours[kwtyp-1]+ \
-                            (sel==4?"\"":"")+tagend+curword+(dontadd?"":wxString::Format("%c",j00_n00b));
+                    output+=tagstart+"b"+tagend+tagstart+(sel==4?"span style=\042color:#":"color=#")+colours[kwtyp-1]+ \
+                            (sel==4?"\042":"")+tagend+curword+(dontadd?"":wxString::Format("%c",j00_n00b));
                 }
                 else
                     output+=curword+(dontadd?"":wxString::Format("%c",j00_n00b));
@@ -226,8 +226,8 @@ void format::button_ok_VwXEvOnButtonClick(wxCommandEvent& event,int index) {
                         output+=tagstart+"/b"+tagend;
                     if(italic)
                         output+=tagstart+"/i"+tagend;
-                    output+=tagstart+(sel==4?"span style=\"color:#":"color=#")+colours[7]+ \
-                            (sel==4?"\"":"")+tagend+curword+(dontadd?"":wxString::Format("%c",j00_n00b));
+                    output+=tagstart+(sel==4?"span style=\042color:#":"color=#")+colours[7]+ \
+                            (sel==4?"\042":"")+tagend+curword+(dontadd?"":wxString::Format("%c",j00_n00b));
                 }
                 else
                     output+=curword+(dontadd?"":wxString::Format("%c",j00_n00b));
@@ -275,8 +275,8 @@ void format::button_ok_VwXEvOnButtonClick(wxCommandEvent& event,int index) {
                         output+=tagstart+"/b"+tagend;
                     if(italic)
                         output+=tagstart+"/i"+tagend;
-                    output+=tagstart+"i"+tagend+tagstart+(sel==4?"span style=\"color:#":"color=#")+colours[4]+ \
-                            (sel==4?"\"":"")+tagend;
+                    output+=tagstart+"i"+tagend+tagstart+(sel==4?"span style=\042color:#":"color=#")+colours[4]+ \
+                            (sel==4?"\042":"")+tagend;
                     output+=j00_n00b;
                 }
             }
@@ -291,7 +291,7 @@ void format::button_ok_VwXEvOnButtonClick(wxCommandEvent& event,int index) {
                     output+=j00_n00b;
                 }
             }
-            if(!commenting&&!quoting&&j00_n00b=='\"') {
+            if(!commenting&&!quoting&&j00_n00b=='\042') {
                 if(dotags) {
                     output=output.Left(mylen-1);
                     if(color!=-1)
@@ -300,13 +300,13 @@ void format::button_ok_VwXEvOnButtonClick(wxCommandEvent& event,int index) {
                         output+=tagstart+"/b"+tagend;
                     if(italic)
                         output+=tagstart+"/i"+tagend;
-                    output+=tagstart+(sel==4?"span style=\"color:#":"color=#")+colours[6]+ \
-                            (sel==4?"\"":"")+tagend;
+                    output+=tagstart+(sel==4?"span style=\042color:#":"color=#")+colours[6]+ \
+                            (sel==4?"\042":"")+tagend;
                     output+=j00_n00b;
                 }
                 quoting=true;
             }
-            else if((j00_n00b=='\"'||j00_n00b=='\n'||j00_n00b=='\r')&&quoting) {
+            else if((j00_n00b=='\042'||j00_n00b=='\n'||j00_n00b=='\r')&&quoting) {
                 quoting=false;
                 color=-1;
                 bold=false;
@@ -326,8 +326,8 @@ void format::button_ok_VwXEvOnButtonClick(wxCommandEvent& event,int index) {
                 bold=false;
                 italic=false;
                 if(dotags)
-                    output+=tagstart+(sel==4?"span style=\"color:#":"color=#")+colours[8]+ \
-                            (sel==4?"\"":"")+tagend;
+                    output+=tagstart+(sel==4?"span style=\042color:#":"color=#")+colours[8]+ \
+                            (sel==4?"\042":"")+tagend;
                 output+=j00_n00b;
                 for(i++;guts.GetChar(i)!='\n'&&i<teh_len;i++) {
                     output+=guts.Mid(i,1);
@@ -338,8 +338,8 @@ void format::button_ok_VwXEvOnButtonClick(wxCommandEvent& event,int index) {
             }
             else if(dotags&&!commenting&&!quoting&&j00_n00b=='#') {
                 output=output.Left(mylen-1);
-                output+=tagstart+"b"+tagend+tagstart+(sel==4?"span style=\"color:#":"color=#")+colours[5]+ \
-                        (sel==4?"\"":"")+tagend;
+                output+=tagstart+"b"+tagend+tagstart+(sel==4?"span style=\042color:#":"color=#")+colours[5]+ \
+                        (sel==4?"\042":"")+tagend;
                 output+=j00_n00b;
                 output+=tagstart+(sel==4?"/span":"/color")+tagend+tagstart+"/b"+tagend;
             }
@@ -347,8 +347,8 @@ void format::button_ok_VwXEvOnButtonClick(wxCommandEvent& event,int index) {
                         (j00_n00b>57&&j00_n00b<64)||j00_n00b==92||j00_n00b==94||
                         (j00_n00b>122&&j00_n00b<128))&&!commenting&&!quoting) {
                 output=output.Left(mylen-1);
-                output+=tagstart+"b"+tagend+tagstart+(sel==4?"span style=\"color:#":"color=#")+colours[5]+ \
-                        (sel==4?"\"":"")+tagend;
+                output+=tagstart+"b"+tagend+tagstart+(sel==4?"span style=\042color:#":"color=#")+colours[5]+ \
+                        (sel==4?"\042":"")+tagend;
                 output+=j00_n00b;
                 output+=tagstart+(sel==4?"/span":"/color")+tagend+tagstart+"/b"+tagend;
             }

@@ -615,8 +615,8 @@ void FB_Edit::OnHotSpot          ( wxStyledTextEvent &event ) {
     if ( Temp[0] == '\'' )
         Temp = Temp.Mid( 2 );
 
-    FileName = Temp.AfterFirst( '\"' );
-    FileName = FileName.BeforeFirst( '\"' );
+    FileName = Temp.AfterFirst( '\042' );
+    FileName = FileName.BeforeFirst( '\042' );
 
     if ( !FileName.Len() ) {
         FileName = Temp.AfterFirst( '\'' );
@@ -645,8 +645,8 @@ void FB_Edit::OnHotSpot          ( wxStyledTextEvent &event ) {
             else if(FileExists(FBCPath+FileName)) {
                 FileName=FBCPath+FileName;
             }
-            else if(FileExists(FBCPath+"inc\\"+FileName)) {
-                FileName=FBCPath+"inc\\"+FileName;
+            else if(FileExists(FBCPath+"inc\\042+FileName)) {
+                FileName=FBCPath+"inc\\042+FileName;
             }
             else
                 FileName="";
