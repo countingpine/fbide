@@ -48,7 +48,7 @@
 
 
 #include "../../FBIde0.4_private.h"
-#define FBUNNAMED "Unnamed"
+#define FBUNNAMED _T("Unnamed")
 #define KWGROUPS        4
 #define mySTC_STYLE_BOLD  1
 #define mySTC_STYLE_ITALIC  2

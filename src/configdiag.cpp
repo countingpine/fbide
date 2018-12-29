@@ -551,7 +551,7 @@ void ConfigDialog::OnSaveTheme( wxCommandEvent& event ) {
     else {
         wxTextEntryDialog dialog(this, m_Lang[157], //"Enter theme name:"
                                  m_Lang[158], //"Paremeters..."
-                                 "", wxOK | wxCANCEL);
+                                 _T(""), wxOK | wxCANCEL);
         if (dialog.ShowModal() != wxID_OK)
             return;
 
@@ -561,13 +561,13 @@ void ConfigDialog::OnSaveTheme( wxCommandEvent& event ) {
         fn = fn.Trim(false);
 
         wxFileSystem File;
-        if (File.FindFirst( m_Parent->EditorPath+"IDE/"+fn+".fbt" )!="" ) {
-            //"Theme \042"+ fn +"\042 already exists!\nOverwrite it?"
+        if (File.FindFirst( m_Parent->EditorPath+_T("IDE/")+fn+_T(".fbt") )!=_T("") ) {
+            //_T("Theme \042")+ fn +_T("\042 already exists!\nOverwrite it?")
             if (wxMessageBox (m_Lang[159]+ fn + m_Lang[160], m_Lang[161], wxICON_QUESTION | wxYES_NO )!=wxOK)
                 return;
         }
         else {
-            wxTextFile temp(m_Parent->EditorPath+"IDE/"+fn+".fbt");
+            wxTextFile temp(m_Parent->EditorPath+_T("IDE/")+fn+_T(".fbt"));
             temp.Create();
             temp.Write();
             temp.Close();
@@ -649,7 +649,7 @@ void ConfigDialog::SetTypeSelection( int intSel ) {
     bool ModFG = false, ModBG = false, ModFont = false, ModStyle = false, ModSize = false;
     bool SetBold = false, SetItalic = false, SetUnderlined = false;
     int SetSize = 0;
-    wxString SetFont = "";
+    wxString SetFont = _T("");
     int selection = intSel;
 
 
@@ -738,7 +738,7 @@ void ConfigDialog::SetTypeSelection( int intSel ) {
     if (ModFont) {
         chFont->Enable();
         if( chFont->FindString( SetFont ) == wxNOT_FOUND )
-            chFont->SetStringSelection( "Courier New" );
+            chFont->SetStringSelection( _T("Courier New") );
         else
             chFont->SetStringSelection( SetFont );
 
@@ -863,8 +863,8 @@ void ConfigDialog::OnOkClick( wxCommandEvent& event ) {
 
         wxString dir;
         wxFileName helpFile( m_Prefs.HelpFile );
-        if( helpFile.IsRelative() && m_Prefs.HelpFile != "" )
-            dir = m_Parent->EditorPath + "IDE/" + m_Prefs.HelpFile;
+        if( helpFile.IsRelative() && m_Prefs.HelpFile != _T("") )
+            dir = m_Parent->EditorPath + _T("IDE/") + m_Prefs.HelpFile;
         else
             dir = m_Prefs.HelpFile;
         if( ::wxFileExists( dir ) ) {
@@ -914,7 +914,7 @@ void ConfigDialog::OnHelpPath( wxCommandEvent& event ) {
                       m_Lang[155], //Open file
                       _T(""),
                       _T(""),
-                       m_Lang[243] + "|*.chm",
+                       m_Lang[243] + _T("|*.chm"),
                       wxFILE_MUST_EXIST );
     if (dlg.ShowModal() != wxID_OK)
         return;
@@ -949,11 +949,11 @@ void ConfigDialog::LoadGeneral() {
 
     wxArrayString arrLangs;
     wxFileSystem LangFiles;
-    wxString fileQuery = LangFiles.FindFirst( m_Parent->EditorPath+"IDE/lang/*.fbl" );
+    wxString fileQuery = LangFiles.FindFirst( m_Parent->EditorPath+_T("IDE/lang/*.fbl") );
     wxFileName objLangFile;
 
     int counter=0, selector=0;
-    while ( fileQuery != "" ) {
+    while ( fileQuery != _T("") ) {
         objLangFile.Assign(fileQuery, wxPATH_NATIVE);
         fileQuery = objLangFile.GetName();
         fileQuery = fileQuery.Lower();
@@ -1004,11 +1004,11 @@ void ConfigDialog::LoadThemes() {
     wxArrayString arrThemes;
     arrThemes.Add( m_Lang[141] ); //"Create new theme"
     wxFileSystem ThemeFiles;
-    wxString fileQuery = ThemeFiles.FindFirst( m_Parent->EditorPath+"IDE/*.fbt" );
+    wxString fileQuery = ThemeFiles.FindFirst( m_Parent->EditorPath+_T("IDE/*.fbt") );
     wxFileName objThemeFile;
 
     int counter=0, selector=0;
-    while ( fileQuery != "" ) {
+    while ( fileQuery != _T("") ) {
         counter++;
         objThemeFile.Assign(fileQuery, wxPATH_NATIVE);
         fileQuery = objThemeFile.GetName();

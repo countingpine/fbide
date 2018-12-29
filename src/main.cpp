@@ -94,7 +94,7 @@ bool stConnection::OnExecute(const wxString& WXUNUSED(topic),
     wxString filename(data);
     wxFileName file ( filename );
     if (!filename.IsEmpty()) {
-        if ( file.GetExt() == "fbs"  )
+        if ( file.GetExt() == _T("fbs")  )
             _myframe_->SessionLoad( filename );
         else {
             int result = _myframe_->bufferList.FileLoaded(filename);
@@ -257,7 +257,7 @@ MyFrame::MyFrame(MyApp * App, const wxString& title)
     wxImage::AddHandler(new wxPNGHandler);
 
     wxBitmap bitmap;
-    if(Prefs.SplashScreen&&bitmap.LoadFile(this->EditorPath+"/IDE/splash.png", wxBITMAP_TYPE_PNG))
+    if(Prefs.SplashScreen&&bitmap.LoadFile(this->EditorPath+_T("/IDE/splash.png"), wxBITMAP_TYPE_PNG))
     {
       new wxSplashScreen(bitmap,
           wxSPLASH_CENTRE_ON_SCREEN|wxSPLASH_TIMEOUT,
@@ -291,7 +291,7 @@ MyFrame::MyFrame(MyApp * App, const wxString& title)
 
     for (int i = 1; i < FB_App->argc; i++) {
         wxFileName File(FB_App->argv[i]);
-        if(File.GetExt() == "fbs") {
+        if(File.GetExt() == _T("fbs")) {
             SessionLoad ( FB_App->argv[i] );
         }
         else {
@@ -299,7 +299,7 @@ MyFrame::MyFrame(MyApp * App, const wxString& title)
                 if( ::wxFileExists( FB_App->argv[i] ) ) {
                     m_FileHistory->AddFileToHistory( FB_App->argv[i] );
                     NewSTCPage(FB_App->argv[i], true);
-                    SetTitle( "FBIde - " + bufferList[FBNotebook->GetSelection()]->GetFileName() );
+                    SetTitle( _T("FBIde - ") + bufferList[FBNotebook->GetSelection()]->GetFileName() );
                 }
             }
         }
@@ -308,7 +308,7 @@ MyFrame::MyFrame(MyApp * App, const wxString& title)
     if( Prefs.UseHelp ) {
         wxFileName helpFile( Prefs.HelpFile );
         if( helpFile.IsRelative() )
-            help.Initialize( EditorPath + "IDE/" + Prefs.HelpFile );
+            help.Initialize( EditorPath + _T("IDE/") + Prefs.HelpFile );
         else
             help.Initialize( Prefs.HelpFile );
     }

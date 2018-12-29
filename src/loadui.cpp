@@ -114,13 +114,13 @@ void MyFrame::LoadMenu () {
     //wxMenu * file_history = new wxMenu;
     m_FileHistory->UseMenu( FB_File );
     
-    FB_File->Append (Menu_New, Lang[11] + "\tCtrl+N", Lang[12]);
-    FB_File->Append (Menu_Open, Lang[13] + "\tCtrl+O", Lang[14]);
-    //FB_File->Append (Menu_FileHistory, Lang[13] + "...", file_history );
+    FB_File->Append (Menu_New, Lang[11] + _T("\tCtrl+N"), Lang[12]);
+    FB_File->Append (Menu_Open, Lang[13] + _T("\tCtrl+O"), Lang[14]);
+    //FB_File->Append (Menu_FileHistory, Lang[13] + _T("..."), file_history );
     
     FB_File->AppendSeparator();
-    FB_File->Append (Menu_Save,	Lang[15] + "\tCtrl+S", Lang[16]);
-    FB_File->Append (Menu_SaveAS, Lang[17] + "\tCtrl+Shift+S", Lang[18]);
+    FB_File->Append (Menu_Save,	Lang[15] + _T("\tCtrl+S"), Lang[16]);
+    FB_File->Append (Menu_SaveAS, Lang[17] + _T("\tCtrl+Shift+S"), Lang[18]);
     FB_File->Append (Menu_SaveAll, Lang[19], Lang[20]);
     
     FB_File->AppendSeparator();
@@ -128,44 +128,44 @@ void MyFrame::LoadMenu () {
     FB_File->Append (Menu_SessionSave, Lang[171], Lang[172]);
     
     FB_File->AppendSeparator();
-    FB_File->Append (Menu_Close, Lang[21] + "\tCtrl+F4", Lang[22]);
+    FB_File->Append (Menu_Close, Lang[21] + _T("\tCtrl+F4"), Lang[22]);
     FB_File->Append (Menu_CloseAll, Lang[173], Lang[174]);
 
     FB_File->AppendSeparator();
-    FB_File->Append (Menu_NewEditor, Lang[23] + "\tShift+Ctrl+N", Lang[24]);
-    FB_File->Append (Menu_Quit, Lang[25] + "\tCtrl+Q", Lang[26]);
+    FB_File->Append (Menu_NewEditor, Lang[23] + _T("\tShift+Ctrl+N"), Lang[24]);
+    FB_File->Append (Menu_Quit, Lang[25] + _T("\tCtrl+Q"), Lang[26]);
 
 
 
     // Edit menu
     _FB_Edit = new wxMenu;
-    _FB_Edit->Append (Menu_Undo, 	_(Lang[27] + "\tCtrl+Z"), _(Lang[28]));
-    _FB_Edit->Append (Menu_Redo, 	_(Lang[29] + "\tCtrl+Shift+Z"), _(Lang[30]));
+    _FB_Edit->Append (Menu_Undo, 	_(Lang[27] + _T("\tCtrl+Z")), _(Lang[28]));
+    _FB_Edit->Append (Menu_Redo, 	_(Lang[29] + _T("\tCtrl+Shift+Z")), _(Lang[30]));
     _FB_Edit->AppendSeparator();
     
-    _FB_Edit->Append (Menu_Cut, 		_(Lang[31] + "\tCtrl+X"), _(Lang[32]));
-    _FB_Edit->Append (Menu_Copy, 	_(Lang[33] + "\tCtrl+C"), _(Lang[34]));
-    _FB_Edit->Append (Menu_Paste, 	_(Lang[35] + "\tCtrl+V"), _(Lang[36]));
+    _FB_Edit->Append (Menu_Cut, 		_(Lang[31] + _T("\tCtrl+X")), _(Lang[32]));
+    _FB_Edit->Append (Menu_Copy, 	_(Lang[33] + _T("\tCtrl+C")), _(Lang[34]));
+    _FB_Edit->Append (Menu_Paste, 	_(Lang[35] + _T("\tCtrl+V")), _(Lang[36]));
     _FB_Edit->AppendSeparator();
 
-    _FB_Edit->Append (Menu_SelectAll,	_(Lang[37] + "\tCtrl+A"), _(Lang[38]));
-    _FB_Edit->Append (Menu_SelectLine,	_(Lang[39] + "\tCtrl+L"), _(Lang[40]));
+    _FB_Edit->Append (Menu_SelectAll,	_(Lang[37] + _T("\tCtrl+A")), _(Lang[38]));
+    _FB_Edit->Append (Menu_SelectLine,	_(Lang[39] + _T("\tCtrl+L")), _(Lang[40]));
     _FB_Edit->AppendSeparator();
 
-    _FB_Edit->Append (Menu_IndentIncrease, _(Lang[41] + "\tTab"), _(Lang[42]));
-    _FB_Edit->Append (Menu_IndentDecrease, _(Lang[43] + "\tShift+Tab"), _(Lang[44]));
+    _FB_Edit->Append (Menu_IndentIncrease, _(Lang[41] + _T("\tTab")), _(Lang[42]));
+    _FB_Edit->Append (Menu_IndentDecrease, _(Lang[43] + _T("\tShift+Tab")), _(Lang[44]));
 
     _FB_Edit->AppendSeparator();
-    _FB_Edit->Append (Menu_Comment,      _(Lang[45] + "\tCtrl+M"), _(Lang[46]));
-    _FB_Edit->Append (Menu_UnComment,    _(Lang[47] + "\tCtrl+Shift+M"), _(Lang[48]));
+    _FB_Edit->Append (Menu_Comment,      _(Lang[45] + _T("\tCtrl+M")), _(Lang[46]));
+    _FB_Edit->Append (Menu_UnComment,    _(Lang[47] + _T("\tCtrl+Shift+M")), _(Lang[48]));
 
 
     // Search menu
     FB_Search = new wxMenu;
-    FB_Search->Append (Menu_Find,	  _(Lang[49] + "\tCtrl+F"), _(Lang[50]));
-    FB_Search->Append (Menu_FindNext, _(Lang[51] + "\tF3"), _(Lang[52]));
-    FB_Search->Append (Menu_Replace,  _(Lang[53] + "\tCtrl+R"), _(Lang[54]));
-    FB_Search->Append (Menu_GotoLine, _(Lang[55] + "\tCtrl+G"), _(Lang[56]));
+    FB_Search->Append (Menu_Find,	  _(Lang[49] + _T("\tCtrl+F")), _(Lang[50]));
+    FB_Search->Append (Menu_FindNext, _(Lang[51] + _T("\tF3")), _(Lang[52]));
+    FB_Search->Append (Menu_Replace,  _(Lang[53] + _T("\tCtrl+R")), _(Lang[54]));
+    FB_Search->Append (Menu_GotoLine, _(Lang[55] + _T("\tCtrl+G")), _(Lang[56]));
 
 
 
@@ -173,19 +173,19 @@ void MyFrame::LoadMenu () {
     FB_View = new wxMenu;
     FB_View->Append          (Menu_Settings, _(Lang[57]), _(Lang[58]));
     FB_View->Append          (Menu_Format, Lang[175], Lang[176]);
-    FB_View->AppendCheckItem (Menu_Result, _(Lang[59] + "\tF4"), _(Lang[60]));
-    FB_View->Append          (Menu_Subs, _(Lang[61] + "\tF2"), _(Lang[62]));
+    FB_View->AppendCheckItem (Menu_Result, _(Lang[59] + _T("\tF4")), _(Lang[60]));
+    FB_View->Append          (Menu_Subs, _(Lang[61] + _T("\tF2")), _(Lang[62]));
     FB_View->Append          (Menu_CompilerLog, _(Lang[236]), _(Lang[237] ) );
     //FB_Tools->Append (Menu_Converter, _(Language.ToolsConverter), _(Language.ToolsConverterDesc));
 
 
     //Run menu
     FB_Run = new wxMenu;
-    FB_Run->Append (Menu_Compile,       _(Lang[63] + "\tCtrl+F9"), _(Lang[64]));
-    FB_Run->Append (Menu_CompileAndRun, _(Lang[65] + "\tF9"), _(Lang[66]));
-    FB_Run->Append (Menu_Run,           _(Lang[67] + "\tShift+Ctrl+F9"), _(Lang[68]));
-    FB_Run->Append (Menu_QuickRun,      _(Lang[69] + "\tF5"), _(Lang[70]));
-    FB_Run->Append (Menu_CmdPromt,      _(Lang[71] + "\tF8"), _(Lang[72]));
+    FB_Run->Append (Menu_Compile,       _(Lang[63] + _T("\tCtrl+F9")), _(Lang[64]));
+    FB_Run->Append (Menu_CompileAndRun, _(Lang[65] + _T("\tF9")), _(Lang[66]));
+    FB_Run->Append (Menu_Run,           _(Lang[67] + _T("\tShift+Ctrl+F9")), _(Lang[68]));
+    FB_Run->Append (Menu_QuickRun,      _(Lang[69] + _T("\tF5")), _(Lang[70]));
+    FB_Run->Append (Menu_CmdPromt,      _(Lang[71] + _T("\tF8")), _(Lang[72]));
     FB_Run->Append (Menu_Parameters,    _(Lang[73]), _(Lang[74]));
     FB_Run->AppendCheckItem (Menu_ShowExitCode, _(Lang[77]), _(Lang[78]));
 	FB_Run->Check  (Menu_ShowExitCode,  Prefs.ShowExitCode);
@@ -196,7 +196,7 @@ void MyFrame::LoadMenu () {
 
     //Help
     HelpMenu = new wxMenu;
-    HelpMenu->Append(Menu_Help, Lang[ 10 ] + "\tF1"  );
+    HelpMenu->Append(Menu_Help, Lang[ 10 ] + _T("\tF1")  );
     if( !Prefs.UseHelp ) HelpMenu->Enable( Menu_Help, false );
     HelpMenu->Append(Menu_QuickKeys, _T("QuickKeys.txt") );
     HelpMenu->Append(Menu_ReadMe, _T("ReadMe.txt") );
@@ -319,13 +319,13 @@ void MyFrame::LoadStatusBar () {
 void MyFrame::NewSTCPage ( wxString InitFile, bool select, int FileType ) {
     
     void* doc;
-    if ( InitFile == "" ) InitFile = FBUNNAMED;
+    if ( InitFile == _T("") ) InitFile = FBUNNAMED;
     Buffer* buff;
     
     wxFileName File(InitFile);
     
-    if(File.GetExt() == "html"||File.GetExt() == "htm") { FileType = 1; }
-    else if( File.GetExt() == "txt" ) { FileType = 2; }
+    if(File.GetExt() == _T("html")||File.GetExt() == _T("htm")) { FileType = 1; }
+    else if( File.GetExt() == _T("txt") ) { FileType = 2; }
 
     if (stc==NULL) {
         Freeze();
@@ -337,7 +337,7 @@ void MyFrame::NewSTCPage ( wxString InitFile, bool select, int FileType ) {
             FBNotebook = new wxMyNotebook( this, FBCodePanel, wxID_ANY, wxDefaultPosition,
                 wxDefaultSize, wxSTATIC_BORDER|wxTB_TOP|wxTB_X);
     
-            stc = new FB_Edit( this, FBCodePanel, -1, "" );
+            stc = new FB_Edit( this, FBCodePanel, -1, _T("") );
             m_TabStcSizer->Add( FBNotebook, 0, wxTOP | wxLEFT | wxRIGHT | wxEXPAND | wxALIGN_TOP, 0 );
             m_TabStcSizer->Add( stc, 1, wxBOTTOM | wxLEFT | wxRIGHT | wxTOP | wxEXPAND, 0 );
             FBCodePanel->SetSizer( m_TabStcSizer );
@@ -349,7 +349,7 @@ void MyFrame::NewSTCPage ( wxString InitFile, bool select, int FileType ) {
             stc->StyleClearAll();
             stc->LoadSTCTheme( CurrentFileType );
             stc->LoadSTCSettings();
-            buff = bufferList.AddFileBuffer("", "");
+            buff = bufferList.AddFileBuffer(_T(""), _T(""));
             buff->SetFileType(FileType);
             doc = stc->GetDocPointer();
             stc->AddRefDocument(doc);
@@ -362,7 +362,7 @@ void MyFrame::NewSTCPage ( wxString InitFile, bool select, int FileType ) {
     }
     else {
         stc->SetBuffer( (Buffer *) 0 );
-        buff = bufferList.AddFileBuffer("", "");
+        buff = bufferList.AddFileBuffer(_T(""), _T(""));
         buff->SetFileType(FileType);
         SaveDocumentStatus(FBNotebook->GetSelection());
         doc = stc->CreateDocument();
@@ -388,7 +388,7 @@ void MyFrame::NewSTCPage ( wxString InitFile, bool select, int FileType ) {
     
     if (SFDialog) SFDialog->Rebuild();
     if ( select ) {
-        SetTitle( "FBIde - " + InitFile );
+        SetTitle( _T("FBIde - ") + InitFile );
     }
 
     return;
@@ -405,7 +405,7 @@ void MyFrame::ChangeNBPage   ( wxTabbedCtrlEvent& event) {
     int index = event.GetSelection();
     if (FBNotebook->GetPageCount()>1) SaveDocumentStatus(event.GetOldSelection());
     SetSTCPage ( index );
-    SetTitle( "FBIde - " + bufferList[index]->GetFileName() );
+    SetTitle( _T("FBIde - ") + bufferList[index]->GetFileName() );
     return;
 }
 
@@ -454,7 +454,7 @@ void MyFrame::SetModified ( int index, bool status ) {
 
     buff->SetWasModified(buff->GetModified());
     wxString NewName;
-    if(status) NewName << "[*] ";
+    if(status) NewName << _T("[*] ");
     
     bufferList.SetBufferModified(index, status);
     NewName << wxFileNameFromPath(buff->GetFileName());

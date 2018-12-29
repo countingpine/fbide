@@ -62,7 +62,7 @@ void wxMyNotebook::OnMouseEvent(wxMouseEvent& event) {
         if ( tabid!=GetSelection() )
             SetSelection( tabid );
         FB_Edit * stc = p->stc;
-        wxMenu popup("");
+        wxMenu popup(_T(""));
         popup.Append(Menu_Close,        _(p->Lang[21]));
         popup.Append(Menu_CloseAll,    _(p->Lang[173]));
         popup.AppendSeparator();
@@ -136,7 +136,7 @@ void wxTabbedCtrl::Create(wxWindow *parent, wxWindowID id,
     hover_menu = false;
     m_intStartPage = 0;
     m_intLastPage = 0;
-    wxToolTip * tooltip = new wxToolTip( "" );
+    wxToolTip * tooltip = new wxToolTip( _T("") );
     tooltip->Enable( true );
     tooltip->SetDelay( 100 );
     SetToolTip(  tooltip );
@@ -147,7 +147,7 @@ void wxTabbedCtrl::Create(wxWindow *parent, wxWindowID id,
     wxPaintDC dc(this);
     int height = 22, pom = 0;
     dc.SetFont(bold_font);
-    dc.GetTextExtent("Aq", &pom, &height);
+    dc.GetTextExtent(_T("Aq"), &pom, &height);
     SetSizeHints( wxSize(-1, height+padding.y*3) );
 }
 
@@ -164,7 +164,7 @@ void wxTabbedCtrl::AddPage(const wxString &text, bool select, int img) {
 
 
 void wxTabbedCtrl::InsertPage(int pg, const wxString& text, bool select, int img) {
-    wxASSERT_MSG(pg >= 0 && pg <= GetPageCount(), "Got invalid page number");
+    wxASSERT_MSG(pg >= 0 && pg <= GetPageCount(), _T("Got invalid page number"));
     pages_type::iterator it = pages.begin() + pg;
     pages.insert(it, wxTabbedPage(text, img));
     if(select || GetSelection()==-1)
@@ -183,7 +183,7 @@ void wxTabbedCtrl::DeleteAllPages() {
 
 void wxTabbedCtrl::DeletePage(int pg) {
     SetSelection(pg);
-    wxASSERT_MSG(pg >= 0 && pg < GetPageCount(), "Got invalid page number");
+    wxASSERT_MSG(pg >= 0 && pg < GetPageCount(), _T("Got invalid page number"));
     tipTab = -1;
     GetToolTip()->Enable( false );
     pages_type::iterator it = pages.begin() + pg;
@@ -198,7 +198,7 @@ void wxTabbedCtrl::DeletePage(int pg) {
 
 
 void wxTabbedCtrl::SetSelection(int pg) {
-    wxASSERT_MSG(pg >= 0 && pg < GetPageCount(), "Got invalid page number");
+    wxASSERT_MSG(pg >= 0 && pg < GetPageCount(), _T("Got invalid page number"));
 
     wxTabbedCtrlEvent event(wxEVT_COMMAND_TABBEDCTRL_PAGE_CHANGING, m_windowId);
     event.SetSelection(pg);
@@ -268,14 +268,14 @@ void wxTabbedCtrl::SetVisible( int pg ) {
 
 
 wxString wxTabbedCtrl::GetPageText(int pg) {
-    wxASSERT_MSG(pg >= 0 && pg < GetPageCount(), "Got invalid page number");
+    wxASSERT_MSG(pg >= 0 && pg < GetPageCount(), _T("Got invalid page number"));
     return pages[pg].text;
 }
 
 
 
 void wxTabbedCtrl::SetPageText(int pg, const wxString &t) {
-    wxASSERT_MSG(pg >= 0 && pg < GetPageCount(), "Got invalid page number");
+    wxASSERT_MSG(pg >= 0 && pg < GetPageCount(), _T("Got invalid page number"));
     if(pages[pg].text != t) {
         pages[pg].text = t;
         Refresh();
@@ -296,7 +296,7 @@ int wxTabbedCtrl::HitTest(const wxPoint &p, long *flags) {
     if(flags)
         *flags = wxTB_HITTEST_NOWHERE;
     dc.SetFont(bold_font);
-    dc.GetTextExtent("Aq", &pom, &height);
+    dc.GetTextExtent(_T("Aq"), &pom, &height);
     if(p.x <= 0 || p.x >= size.x)
         return wxNOT_FOUND;
     if(p.y <= 0 || p.y >= height+padding.y*2 )
@@ -362,7 +362,7 @@ void wxTabbedCtrl::OnMouse(wxMouseEvent &ev) {
                     tooltip->Enable( true );
                     wxString info;
                     int pg = page + 1;
-                    info << pg << " of " << GetPageCount() << " - " << GetPageText( page );
+                    info << pg << _T(" of ") << GetPageCount() << _T(" - ") << GetPageText( page );
                     tooltip->SetTip( info );
                 }
             }
@@ -414,7 +414,7 @@ void wxTabbedCtrl::OnMouse(wxMouseEvent &ev) {
 
 
 void wxTabbedCtrl::GenerateConextMenu( wxPoint & mouse ) {
-    wxMenu popup("");
+    wxMenu popup(_T(""));
     for ( int i = 0; i < GetPageCount(); i++ ) {
         if ( i==active) {
             popup.AppendCheckItem( i, GetPageText( i ) );
@@ -573,7 +573,7 @@ void wxTabbedCtrl::OnPaint(wxPaintEvent &) {
 
     int height, width, pom;
     dc.SetFont(bold_font);
-    dc.GetTextExtent("Aq", &pom, &height);
+    dc.GetTextExtent(_T("Aq"), &pom, &height);
     int posx = 3;
 
     //and tabs

@@ -86,11 +86,11 @@ void MyFrame::OnGotoLine (wxCommandEvent& WXUNUSED(event)) {
     if (lineString.IsEmpty())
         return;
 
-    if (lineString.Contains(":")) {
+    if (lineString.Contains(_T(":"))) {
         wxString line, col;
         line = lineString.BeforeFirst(':');
         col = lineString.AfterFirst(':');
-        if ((line.IsNumber() || line == "e") && (col.IsNumber() || col == "e")) {
+        if ((line.IsNumber() || line == _T("e")) && (col.IsNumber() || col == _T("e"))) {
             long lineNumber, colNumber;
             if (line.IsNumber())
                 line.ToLong(&lineNumber);
@@ -117,7 +117,7 @@ void MyFrame::OnGotoLine (wxCommandEvent& WXUNUSED(event)) {
         }
     }
 
-    else if (lineString == "e")
+    else if (lineString == _T("e"))
         stc->GotoLine(stc->GetLineCount() - 1);
 
     else if (lineString.IsNumber()) {

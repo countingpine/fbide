@@ -45,7 +45,7 @@ void MyFrame::OnHelp ( wxCommandEvent& event ) {
 
     if( strKw.Len() ) {
         if( stc->GetCharAt( start - 1 ) == '#' )
-            strKw = "#" + strKw;
+            strKw = _T("#") + strKw;
 
         help.KeywordSearch( strKw );
         //help.DisplayTextPopup( strKw, wxPoint(300, 200 ) );
@@ -59,29 +59,29 @@ void MyFrame::OnHelp ( wxCommandEvent& event ) {
 
 
 void MyFrame::OnQuickKeys    ( wxCommandEvent& event ) {
-    wxString FileName( EditorPath + "IDE/quickkeys.txt" );
+    wxString FileName( EditorPath + _T("IDE/quickkeys.txt") );
     if( bufferList.FileLoaded( FileName )==-1 ) {
         NewSTCPage( FileName, true );
-        SetTitle( "FBIde - " + bufferList[FBNotebook->GetSelection()]->GetFileName() );
+        SetTitle( _T("FBIde - ") + bufferList[FBNotebook->GetSelection()]->GetFileName() );
     }
 }
 
 
 void MyFrame::OnReadMe       ( wxCommandEvent& event ) {
-    wxString FileName( EditorPath + "IDE/readme.txt" );
+    wxString FileName( EditorPath + _T("IDE/readme.txt") );
     if( bufferList.FileLoaded( FileName )==-1 ) {
         NewSTCPage( FileName, true );
-        SetTitle( "FBIde - " + bufferList[FBNotebook->GetSelection()]->GetFileName() );
+        SetTitle( _T("FBIde - ") + bufferList[FBNotebook->GetSelection()]->GetFileName() );
     }
 
 }
 
 
 void MyFrame::OnFpp          ( wxCommandEvent& event ) {
-    wxString FileName( EditorPath + "IDE/fpp.txt" );
+    wxString FileName( EditorPath + _T("IDE/fpp.txt") );
     if( bufferList.FileLoaded( FileName )==-1 ) {
         NewSTCPage( FileName, true );
-        SetTitle( "FBIde - " + bufferList[FBNotebook->GetSelection()]->GetFileName() );
+        SetTitle( _T("FBIde - ") + bufferList[FBNotebook->GetSelection()]->GetFileName() );
     }
 
 }
