@@ -39,15 +39,15 @@ VwX_INIT_OBJECTS_format {
     SetSize(405,210);
     }
     st5=new wxStaticText(this,-1,wxT(""),wxPoint(33,11),wxSize(218,19),wxST_NO_AUTORESIZE);
-    st5->SetLabel(wxT(Parent->Lang[162])); //"Type of conversion:"
+    st5->SetLabel(Parent->Lang[162]); //"Type of conversion:"
 
     lno6=new wxStaticLine(this,-1,wxPoint(29,32),wxSize(234,1));
 
     button_ok=new wxButton(this,-1,wxT(""),wxPoint(275,31),wxSize(93,24));
-    button_ok->SetLabel(wxT(Parent->Lang[163])); //"Go!"
+    button_ok->SetLabel(Parent->Lang[163]); //"Go!"
 
     sb9=new wxStaticBox(this,-1,wxT(""),wxPoint(20,117),wxSize(335,53));
-    sb9->SetTitle(wxT(Parent->Lang[164])); //"Preview!"
+    sb9->SetTitle(Parent->Lang[164]); //"Preview!"
 
     preview=new wxStaticText(this,-1,wxT(""),wxPoint(30,145),wxSize(45,13));
     preview->SetLabel(wxT("Cls:Locate 1,1:Print \042\042"));
@@ -58,9 +58,9 @@ VwX_INIT_OBJECTS_format {
     chc15->SetSelection(0);
 
     bt16=new wxButton(this,-1,wxT(""),wxPoint(275,61),wxSize(93,24));
-    bt16->SetLabel(wxT(Parent->Lang[3]));
+    bt16->SetLabel(Parent->Lang[3]);
     bt17=new wxButton(this,-1,wxT(""),wxPoint(275,91),wxSize(93,24));
-    bt17->SetLabel(wxT(Parent->Lang[112]));
+    bt17->SetLabel(Parent->Lang[112]);
 
     Refresh();
     Centre();

@@ -53,7 +53,7 @@ SFBrowser::SFBrowser(   wxWindow* parent,
                         wxDefaultPosition, wxDefaultSize, wxCLIP_CHILDREN);
 
     SearchLabel=new wxStaticText(Panel,-1, wxT(""),wxPoint(5,7),wxSize(60,13),wxST_NO_AUTORESIZE);
-    SearchLabel->SetLabel(wxT(Parent->Lang[226])); //Search
+    SearchLabel->SetLabel(Parent->Lang[226]); //Search
 
     SearchBox=new wxTextCtrl(Panel, SearchBoxId,wxT(""),wxPoint(70,5),wxSize(220,21),wxTE_PROCESS_ENTER );
     wxBoxSizer * Sizer = new wxBoxSizer(wxVERTICAL);
