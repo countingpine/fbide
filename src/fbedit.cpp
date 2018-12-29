@@ -645,8 +645,8 @@ void FB_Edit::OnHotSpot          ( wxStyledTextEvent &event ) {
             else if(FileExists(FBCPath+FileName)) {
                 FileName=FBCPath+FileName;
             }
-            else if(FileExists(FBCPath+"inc\\042+FileName)) {
-                FileName=FBCPath+"inc\\042+FileName;
+            else if(FileExists(FBCPath+_T("inc\\")+FileName)) {
+                FileName=FBCPath+_T("inc\\")+FileName;
             }
             else
                 FileName=_T("");

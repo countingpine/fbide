@@ -290,7 +290,7 @@ bool MyFrame::FindOccurence(const wxString& findStr, int direc, int flags) {
             targetStart = stc->GetSelectionEnd();
 
         else if ((stc->GetSelectedText() == findStr) && (direc == 1))
-            targetStart = (stc->GetSelectionStart() <? stc->GetSelectionEnd()) - 1;
+            targetStart = (stc->GetSelectionStart() < stc->GetSelectionEnd()) - 1;
     }
 
     // If this is a case insensitive search

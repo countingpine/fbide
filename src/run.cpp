@@ -142,7 +142,7 @@ void MyFrame::CompilerLog () {
     wxString tag=_T("");
     for(int i=0;i<(int)strCompilerOutput.Count();i++) {
         for(int j=0;j<(int)strCompilerOutput[i].Len();j++) {
-            char thechar=(char)*strCompilerOutput[i].Mid(j,1);
+            wxChar thechar=(wxChar)*strCompilerOutput[i].Mid(j,1);
             if(thechar=='['&&!nesting) {
                 nesting=true;
             }

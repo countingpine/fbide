@@ -87,7 +87,7 @@ public:
     void OnKeyUp            ( wxKeyEvent &event );
     void OnHotSpot          ( wxStyledTextEvent &event );
 
-    void FB_Edit::IndentLine ( int & lineInd, int cLine );
+    void IndentLine ( int & lineInd, int cLine );
 
     wxString    DocumentName;
     int braceLoc;

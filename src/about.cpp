@@ -147,7 +147,7 @@ void about::CreateControls() {
     bool nesting=false;
     for(int i=0;i<(int)myarr.Count();i++) {
         for(int j=0;j<(int)myarr[i].Len();j++) {
-            char thechar=(char)*myarr[i].Mid(j,1);
+            wxChar thechar=(wxChar)*myarr[i].Mid(j,1);
             if(thechar=='['&&!nesting) {
                 nesting=true;
             }
